@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -22,29 +23,32 @@ Route::get('/', function () {
 });
 
 Route::get('/index', function () {
+    return redirect('/shop');
+})->middleware(['auth', 'verified'])->name('index');
+
+Route::get('/shop', function () {
     return view('index');
-})->name('index');
+})->middleware(['auth', 'verified'])->name('shop');
 
 
-Route::get('/text', function () {
-    return view('admin.dashboard');
+// Route::get('/admin-dashboard', function () {
+//     return view('admin.add-product');
+// });
+
+// admin routs
+Route::group(['middleware' => 'admin.type'], function () {
+    Route::resource('admin', AdminController::class)->middleware('auth');;
+    Route::resource('product', ProductController::class)->middleware('auth');
+    Route::get('/AddProduct', function () {
+        return view('admin.add-product');
+    })->name('AddProduct')->middleware('auth');;
 });
-
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-// Route::post('/product', [ProductController::class, 'store'])->name('product.store')->middleware('auth');
-Route::resource('admin', AdminController::class);
-
-Route::resource('product', ProductController::class)->middleware('auth');
-    // ->missing(function (Request $request) {
-    //      return view('dashboard');
-    // });
 
 
 Route::middleware('auth')->group(function () {
@@ -52,6 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::post('/logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 
 
 

@@ -4,13 +4,12 @@ import { gsap } from "gsap";
 // gsap.registerPlugin(PixiPlugin, MotionPathPlugin);
 
 
-export default function() {
 
-    let box = document.querySelector('.box')
-    box.addEventListener('hover', function () { 
-        console.log('hello world');
-     });
-    gsap.to(".box", { x: 300 });
+
+    // let box = document.querySelector('.box')
+    // box.addEventListener('hover', function () { 
+    //     console.log('hello world');
+    //  });
+    gsap.to(".box", { x: 50 });
     // gsap.to(".box", {rotation: 27, x: 100, duration: 1});
-    
-}
+    export default Animation;

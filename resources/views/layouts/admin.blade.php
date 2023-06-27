@@ -24,19 +24,19 @@
 </head>
 
 <body class="font-oswald antialiased">
-    <x-admin-side-bar></x-admin-side-bar>
-    <div class="flex flex-col">
-
-        <div class="min-h-screen bg-gray-100 w-full sm:w-[80%] ml-0 sm:ml-auto">
+   
+    <div class="flex flex-row">
+       <x-admin-side-bar></x-admin-side-bar>
+        <div class="min-h-screen bg-gray-100 w-full  ml-0 sm:ml-auto">
             
             <!-- Page Heading -->
-            @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+            <header class="bg-white shadow mb-1">
+                <div class="max-w-7xl py-6 px-3 sm:px-6 lg:px-8 flex flex-row justify-between">
+                <a href="{{ route('index') }}" class="text-gray-700 hover:underline px-4 py-1 ">Home</a>
+                <a href="{{ route('admin.index') }}" class="text-gray-700 hover:underline px-4 py-1 ">Back</a>
+                    <!-- <div >This is the header</div> -->
                 </div>
             </header>
-            @endif
             <!-- Page Content -->
             <main >
                 {{ $slot }}

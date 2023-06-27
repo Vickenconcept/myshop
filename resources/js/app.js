@@ -8,20 +8,7 @@ import animation from './components/animation.js';
 
 window.Alpine = Alpine;
 
-// Alpine.start();
-export default function() {
-
-    // let box = document.querySelector('.box')
-    const box = document.getElementById('box');
-    box.addEventListener('click', function (e) { 
-        e.preventDefault();
-        
-        console.log('hello world');
-     });
-    gsap.to(".box", { x: 300 });
-    // gsap.to(".box", {rotation: 27, x: 100, duration: 1});
-    
-}
+// Alpine.start()
 
 
     // Alpine.data('myData',myData);

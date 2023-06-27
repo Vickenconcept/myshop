@@ -52,7 +52,7 @@ class ProductController extends Controller
        // Save the model instance to the database
         $product->save();
         // Redirect or perform any other actions after storing the data
-        return redirect('dashboard');
+        return redirect('admin');
     }
 
     /**
@@ -68,7 +68,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $product = Product::findorfail($product->id);
+        // $this->authorize('update-product', $product);
+
+        return view('admin.edit-product',compact('product'));
     }
 
     /**
@@ -76,14 +79,30 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product = Product::find($product->id); // Retrieve the specific product
+    
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'image' => 'required',
+            'description' => 'required|string',
+            'price' => 'required|numeric'
+        ]);
+    
+        $product->update($validatedData); // Update the product
+        return redirect('admin');
+
     }
+    
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Product $product)
     {
-        //
+        // dd($product);
+        $product = Product::find($product->id);
+        $product->delete();
+
+        return redirect('admin');
     }
 }

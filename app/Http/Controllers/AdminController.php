@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,7 +14,8 @@ class AdminController extends Controller
     public function index()
     {
         // return view('admin.dashboard');
-        return view('admin.dashboard');
+        $product = Product::latest()->get();
+        return view('admin.dashboard' , ['product' => $product]);
     }
 
     /**
@@ -21,7 +23,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin');
+        // return view('dashboard.admin');
+
     }
 
     /**
