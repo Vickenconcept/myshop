@@ -18,7 +18,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
     <style>
-      
+
     </style>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -37,11 +37,11 @@
         </header>
         @endif
         <!-- navbar -->
-        <x-navbar></x-navbar>
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+        <x-navbar />
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
     </div>
     <!-- footer -->
     <x-footer></x-footer>

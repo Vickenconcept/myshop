@@ -8,14 +8,10 @@
             <p class="text-gray-500 my-12 leading-8">
                 Base wheel zoom adoption open manage future-proof for. Start what’s status cost food caught.
             </p>
-            <button class="bg-black text-white py-3 px-10 hover:border-[0.6px] hover:border-black hover:bg-transparent hover:text-black transition-transform duration-400 transform hover:-translate-y-1">SHOP
-                NOW</button>
+            <x-landing.main-button> {{ __('SHOP NOW') }}</x-landing.main-button>
         </div>
         <div class="w-[100%] h-full relative">
-            <img src="{{ cloudinary_url('Shoe-hero_dybi6m', []) }}" alt="Sample Image" class="float-right relative object-contain  w-[80%] z-10">
-            <!-- <i class='bx bxs-left-arrow  text-[#dde9f8]   buttom-[70em] absolute  text-[100%] transform rotate-[35deg]'></i>
-            <i class='bx bxs-left-arrow text-[#b7cae2]   buttom-[70em] absolute  text-[100%] transform rotate-[10deg]'></i> -->
-            <!-- <img src="https://res.cloudinary.com/dhteikrlx/image/upload/h_450,w_600/blue-shoe-removebg-preview_i01gzx" alt="Sample Image" > -->
+            <img src="{{ cloudinary_url('mainnn_shoeee', []) }}" alt="Sample Image" class="float-right relative object-contain  w-[80%] z-10">
         </div>
     </div>
     <!-- main -->
@@ -28,57 +24,45 @@
             </div>
             <!-- cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> <!-- card component -->
-                <div x-data="{imageSrc: '{{ cloudinary_url('gray-shoe_y3jpkh') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                     <div>
                         <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                     </div>
                 </div>
 
-                <div x-data="{imageSrc: '{{ cloudinary_url('black-shoe_qwjqvc') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                     <div>
                         <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                     </div>
                 </div>
 
-                <div x-data="{imageSrc: '{{ cloudinary_url('white-shoe3_qfxasu') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                     <div>
                         <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                     </div>
                 </div>
 
-                <div x-data="{imageSrc: '{{ cloudinary_url('gray-shoe_y3jpkh') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                     <div>
                         <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="bg-white pb-5 shadow-md hover:shadow-transparent">
-                    <div class="bg-gray-100 py-10 h-[300px]">
-                        <img src="{{ cloudinary_url('white-shoe3_qfxasu', ['width' => 600, 'height' => 450]) }}" alt="Sample Image" class="  object-cover w-[100%] h-full">
-                    </div>
-                    <div>
-                        <h1 class=" text-black font-normal text-xl mb-8 ">Walking-tennis shoes</h1>
-                        <p class="text-gray-500">$330.00 - $510.00</p>
-                    </div>
-                </div>  -->
         </section>
         <!-- new collection of shoes -->
         <section class="bg-slate-100 px-3 py-28">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div class="bg-transparent h-[39em]">
                     <h2 class="text-5xl font-normal mb-16">New collection of running shoes</h2>
-                    <img src="{{ cloudinary_url('running-leg_jcmoev', []) }}" alt="Sample Image" class=" object-cover  w-full">
+                    <img src="{{ cloudinary_url('running_shoe', []) }}" alt="Sample Image" class=" object-cover  w-full">
                 </div>
                 <div class="bg-transparent  h-[39em]">
-                    <img src="{{ cloudinary_url('tying-shoes_aih3ph', []) }}" alt="Sample Image" class="  object-cover h-full w-full">
+                    <img src="{{ cloudinary_url('running_shoe', []) }}" alt="Sample Image" class="  object-cover h-full w-full">
                 </div>
                 <div class="bg-transparent h-[39em]">
-                    <img src="{{ cloudinary_url('gray-shoe1_yy7csy', []) }}" alt="Sample Image" class=" object-cover  w-full">
+                    <img src="{{ cloudinary_url('running_shoe', []) }}" alt="Sample Image" class=" object-cover  w-full">
                     <p class="my-10 text-gray-500">Base wheel zoom adoption open manage future-proof for cost food caught</p>
-                    <button class="bg-black text-white py-3 px-10 hover:border-[0.6px] hover:border-black hover:bg-transparent hover:text-black transition-transform duration-400 transform hover:-translate-y-1">
-                        SHOP NOW
-                    </button>
+                    <x-landing.main-button> {{ __('SHOP NOW') }}</x-landing.main-button>
                 </div>
             </div>
         </section>
@@ -120,30 +104,30 @@
         <section class="mx-3">
             <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1">
                 <div class="bg-transparent ">
-                    <img src="{{ cloudinary_url('shoe-section-six-img-01_o6vr4i', ['width' => 600, 'height' => 450]) }}" alt="Sample Image" class="  object-cover w-full">
+                    <img src="{{ cloudinary_url('running_shoe', ['width' => 600, 'height' => 450]) }}" alt="Sample Image" class="  object-cover w-full">
                 </div>
                 <div class=" mx-5 lx:mx-20">
                     <h1 class="text-5xl px-10 font-normal text-center">Best deals on running shoes</h1>
                     <div class="grid  grid-cols-2 gap-5 mt-10">
-                        <div x-data="{imageSrc: '{{ cloudinary_url('gray-shoe_y3jpkh') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                        <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                             <div>
                                 <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                             </div>
                         </div>
 
-                        <div x-data="{imageSrc: '{{ cloudinary_url('black-shoe_qwjqvc') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                        <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                             <div>
                                 <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                             </div>
                         </div>
 
-                        <div x-data="{imageSrc: '{{ cloudinary_url('white-shoe3_qfxasu') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                        <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                             <div>
                                 <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                             </div>
                         </div>
 
-                        <div x-data="{imageSrc: '{{ cloudinary_url('gray-shoe_y3jpkh') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                        <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                             <div>
                                 <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                             </div>
@@ -165,9 +149,7 @@
                 </h1>
                 <p class="text-xl my-5">OFFER PRICE</p>
                 <p class="text-white "><span class="line-through">$5999.00</span> <span class="text-red-500 text-2xl"> $3125.00</span></p>
-                <button class="bg-black text-white py-3 px-10 mt-5 hover:border-[0.6px] hover:border-black hover:bg-transparent hover:text-black transition-transform duration-400 transform hover:-translate-y-1">
-                    SHOP NOW
-                </button>
+                <x-landing.main-button> {{ __('SHOP NOW') }}</x-landing.main-button>
             </div>
         </section>
 
@@ -180,25 +162,25 @@
             </div>
             <!-- cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> <!-- card component -->
-                <div x-data="{imageSrc: '{{ cloudinary_url('gray-shoe_y3jpkh') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                     <div>
                         <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                     </div>
                 </div>
 
-                <div x-data="{imageSrc: '{{ cloudinary_url('black-shoe_qwjqvc') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                     <div>
                         <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                     </div>
                 </div>
 
-                <div x-data="{imageSrc: '{{ cloudinary_url('white-shoe3_qfxasu') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                     <div>
                         <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                     </div>
                 </div>
 
-                <div x-data="{imageSrc: '{{ cloudinary_url('gray-shoe_y3jpkh') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
+                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
                     <div>
                         <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
                     </div>

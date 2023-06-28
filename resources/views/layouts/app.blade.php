@@ -22,28 +22,21 @@
 </head>
 
 <body class="font-oswald antialiased">
-    <div class="min-h-screen bg-gray-100">
-
-
-        <!-- Page Heading -->
-        @if (isset($header))
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
-        @endif
-        <!-- navbar -->
-        <x-navbar></x-navbar>
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+    <div class="flex flex-row">
+        <x-navbar />
+        <div class="min-h-screen bg-gray-100 w-full  ml-0 sm:ml-auto">
+            <header class="bg-white shadow mb-1">
+                <div class="max-w-7xl py-6 px-3 sm:px-6 lg:px-8 flex flex-row justify-between">
+                    <a href="{{ route('landing.home') }}" class="text-gray-700 hover:underline px-4 py-1 ">Home</a>
+                    <a href="" class="text-gray-700 hover:underline px-4 py-1 ">Back</a>
+                </div>
+            </header>
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
     </div>
-    <!-- footer -->
-    <x-footer></x-footer>
-    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
 </body>
 
 </html>

@@ -2,14 +2,14 @@
 <!-- before:p-1 before:h-full before:absolute before:top-0 before:right-0 before:bg-blue-100 -->
             <ul>
                 <li >
-                    <a href="{{ route('admin.index') }}" class="text-white hover:underline first-upper p-2 hover:bg-white hover:text-blue-700 rounded-l-full transition-all duration-300 block">Ecommerce</a>
+                    <a href="" class="text-white hover:underline first-upper p-2 hover:bg-white hover:text-blue-700 rounded-l-full transition-all duration-300 block">Ecommerce</a>
                 </li>
                 <li >
-                    <a href="{{ route('admin.index') }}" class="text-white hover:underline first-upper p-2 hover:bg-white hover:text-blue-700 rounded-l-full transition-all duration-300 block">Ecommerce</a>
+                    <a href="" class="text-white hover:underline first-upper p-2 hover:bg-white hover:text-blue-700 rounded-l-full transition-all duration-300 block">Ecommerce</a>
                 </li>
                 <li >
-                    <a href="{{ route('admin.index') }}" class="text-white hover:underline first-upper p-2 hover:bg-white hover:text-blue-700 rounded-l-full transition-all duration-300 block">Ecommerce</a>
+                    <a href="" class="text-white hover:underline first-upper p-2 hover:bg-white hover:text-blue-700 rounded-l-full transition-all duration-300 block">Ecommerce</a>
                 </li>
             </ul>
-            
+
         </div>

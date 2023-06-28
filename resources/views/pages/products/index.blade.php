@@ -1,4 +1,4 @@
-<x-admin-layout>
+<x-app-layout>
 
     <div class="bg-white py-10 px-3">
         <a href="{{ route('AddProduct') }}" class="text-white bg-blue-700 hover:underline px-4 py-1 box">Add product</a>
@@ -53,4 +53,4 @@
         </table>
 
     </section>
-</x-admin-layout>
+</x-app-layout>

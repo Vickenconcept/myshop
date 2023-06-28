@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Cloudinary\Asset\Image;
 
 /**
- * @param null $key
+ * @param  null  $key
  * @return User|null
  */
 function user($key = null)
@@ -24,7 +24,7 @@ function user($key = null)
  */
 function cloudinary_url($value, array $transformation = [], bool $bg_auto = false): string
 {
-    if (str($value)->startsWith('http')) return $value;
+    if (str($value)->startsWith('http')) return  $value;
 
     if (!is_array($transformation)) {
         $transformation = ['width' => $transformation];
@@ -32,7 +32,7 @@ function cloudinary_url($value, array $transformation = [], bool $bg_auto = fals
 
     if ($bg_auto) {
         $transformation = array_merge($transformation, [
-            "crop" => "pad",
+            "crop"       => "pad",
             "background" => "auto"
         ]);
     }
@@ -49,7 +49,7 @@ function cloudinary_url($value, array $transformation = [], bool $bg_auto = fals
 // */
 //function cart()
 //{
-// return app(App\Support\Cart::class);
+//    return app(App\Support\Cart::class);
 //}
 
 /**

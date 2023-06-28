@@ -1,32 +1,10 @@
 <!-- navbar -->
 <nav class="flex flex-col md:flex-row  md:justify-between  bg-white  px-1 fixed top-0 w-full z-20">
-
     <div class=" font-semibold text-xl py-[0.8rem] box transition-x duration-300">
         <a href=""><span class="logo-default test-retina-three " id="box"><img alt="logo" src="https://emart.wpthemedemos.com/shoes/wp-content/uploads/sites/18/2023/01/emart-011.webp" srcset="https://emart.wpthemedemos.com/shoes/wp-content/uploads/sites/18/2023/01/emart-011.webp 1x, https://emart.wpthemedemos.com/shoes/wp-content/uploads/sites/18/2023/01/emart-011.webp 2x" width="147" height="31"></span></a>
     </div>
-    <div class=" ">
-        <!-- <ul class="flex flex-col  md:flex-row justify-between">
-            <li class=" py-[0.8rem] md:px-5  font-normal text-xl">
-                Demo
-                <i class='bx bx-chevron-down'></i>
-            </li>
-            <li class=" py-[0.8rem] md:px-5  font-normal text-xl">
-                Product
-                <i class='bx bx-chevron-down'></i>
-            </li>
-            <li class=" py-[0.8rem] md:px-5  font-normal text-xl">
-                Shop
-                <i class='bx bx-chevron-down'></i>
-            </li>
-            <li class=" py-[0.8rem] md:px-5  font-normal text-xl">
-                Blog
-                <i class='bx bx-chevron-down'></i>
-            </li>
-            <li class=" py-[0.8rem] md:px-5  font-normal text-xl">
-                Contact
-                <i class='bx bx-chevron-down'></i>
-            </li> -->
 
+    <div class=" ">
         <ul class="flex flex-col  md:flex-row justify-between">
             <div>
                 <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-black font-medium bg-blue-300  p-5  text-center inline-flex items-center" type="button">
@@ -89,44 +67,39 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </ul>
     </div>
 
     <div class=" ">
-
         <div class="hidden sm:flex">
             <x-dropdown>
                 <x-slot name="trigger">
-                    <!-- <div>{{ Auth::user()->name }}</div> -->
                     <i class='bx bx-user px-3 py-3 text-xl cursor-pointer'></i>
-
                 </x-slot>
 
                 <x-slot name="content">
-                    <div class="p-3 text-blue-700">{{ Auth::user()->name }}</div>
+                    <div class="p-3 text-blue-700"></div>
+                    @if (Auth::user())
                     <x-dropdown-link :href="route('profile.edit')">
                         {{ __('Profile') }}
                     </x-dropdown-link>
-                    @if(Auth::user()->is_admin == 1)
-                    <!-- <a href="{{ route('admin.index') }}" class="text-gray-600 hover:underline px-4 py-1 box">Admin </a> -->
-                    <x-dropdown-link :href="route('admin.index')">
-                            {{ __('Admin') }}
-                        </x-dropdown-link>
-                    @endif
 
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                                this.closest('form').submit();">
+                                                this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-dropdown-link>
                     </form>
+                    @else
+                    <x-dropdown-link :href="route('register')">
+                        {{ __('Register') }}
+                    </x-dropdown-link>
+                    <x-dropdown-link :href="route('login')">
+                        {{ __('Login') }}
+                    </x-dropdown-link>
+                    @endif
 
 
                 </x-slot>

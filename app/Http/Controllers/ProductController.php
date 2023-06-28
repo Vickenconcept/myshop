@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.products.create');
     }
 
     /**
@@ -39,10 +39,10 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
         ]);
-    
+
         $user = auth()->user();
         // $projects = new Product;
-        $product = $user->products()->create([
+        $product = $user->products->create([
             'name' => $request->input('name'),
             'image' => $request->input('image'),
             'description' => $request->input('description'),
@@ -80,19 +80,19 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product = Product::find($product->id); // Retrieve the specific product
-    
+
         $validatedData = $request->validate([
             'name' => 'required|string',
             'image' => 'required',
             'description' => 'required|string',
             'price' => 'required|numeric'
         ]);
-    
+
         $product->update($validatedData); // Update the product
         return redirect('admin');
 
     }
-    
+
 
     /**
      * Remove the specified resource from storage.

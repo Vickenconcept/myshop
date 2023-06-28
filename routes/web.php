@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthenticatedSessionController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -18,35 +20,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(LandingController::class)->name('landing.')->group(function (){
+    Route::get('/', 'home')->name('home');
+
 });
 
-Route::get('/index', function () {
-    return redirect('/shop');
-})->middleware(['auth', 'verified'])->name('index');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
+    Route::resource('products', ProductController::class);
 
-Route::get('/shop', function () {
-    return view('index');
-})->middleware(['auth', 'verified'])->name('shop');
-
-
-// Route::get('/admin-dashboard', function () {
-//     return view('admin.add-product');
-// });
-
-// admin routs
-Route::group(['middleware' => 'admin.type'], function () {
-    Route::resource('admin', AdminController::class)->middleware('auth');;
-    Route::resource('product', ProductController::class)->middleware('auth');
-    Route::get('/AddProduct', function () {
-        return view('admin.add-product');
-    })->name('AddProduct')->middleware('auth');;
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 
