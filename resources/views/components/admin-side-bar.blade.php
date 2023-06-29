@@ -1,4 +1,4 @@
-<div x-data="{toggle: false}" class="bg-blue-700 px-5 pt-20 fixed h-[100vh] transition-x duration-700 font-sans shadow-md" x-bind:class="toggle ? 'w-1/4' : 'w-0'" @click.away="toggle = false">
+<div x-data="{toggle: false}" class="bg-blue-700 px-5 pt-20 fixed h-[100vh] transition-x duration-700 font-sans shadow-md z-50" x-bind:class="toggle ? 'w-1/4' : 'w-0'" @click.away="toggle = false">
     <button class="bg-white shadow rounded-xl px-3 py-2 transition-x duration-700 float-right top-10 absolute -right-5 cursor-pointer " @click="toggle = !toggle" >
     <i class="bx text-md" x-bind:class="toggle ? 'bx-left-arrow-alt': 'bx-right-arrow-alt'"></i>
     </button>
@@ -44,8 +44,6 @@
                     Products
                 </x-nav-link>
             </li>
-           
-            
         </ul>
     </div>
 </div>
