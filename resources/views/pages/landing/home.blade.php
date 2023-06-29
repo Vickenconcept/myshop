@@ -8,7 +8,7 @@
             <p class="text-gray-500 my-12 leading-8">
                 Base wheel zoom adoption open manage future-proof for. Start what’s status cost food caught.
             </p>
-            <x-landing.main-button> {{ __('SHOP NOW') }}</x-landing.main-button>
+            <x-landing.main-button class="text-red-500"> {{ __('SHOP NOW') }}</x-landing.main-button>
         </div>
         <div class="w-[100%] h-full relative">
             <img src="{{ cloudinary_url('mainnn_shoeee', []) }}" alt="Sample Image" class="float-right relative object-contain  w-[80%] z-10">

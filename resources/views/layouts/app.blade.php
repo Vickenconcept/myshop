@@ -23,18 +23,27 @@
 
 <body class="font-oswald antialiased">
     <div class="flex flex-row">
-        <x-navbar />
         <div class="min-h-screen bg-gray-100 w-full  ml-0 sm:ml-auto">
-            <header class="bg-white shadow mb-1">
-                <div class="max-w-7xl py-6 px-3 sm:px-6 lg:px-8 flex flex-row justify-between">
-                    <a href="{{ route('landing.home') }}" class="text-gray-700 hover:underline px-4 py-1 ">Home</a>
-                    <a href="" class="text-gray-700 hover:underline px-4 py-1 ">Back</a>
-                </div>
-            </header>
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            <div class="flex flex-row">
+                <x-admin-side-bar />
+                <main class=" w-full">
+                    <header class="w-full flex flex-row justify-between px-20 bg-gray-200 font-sans py-2">
+                        <h1 class="text-left my-auto font-semibold text-gray-700">Admin Dashboard</h1>
+                        <div class="">
+                           <div class="flex flex-row">
+                           <div class="w-10 h-10 bg-blue-900 rounded-full  border  border-gray-300  overflow-hidden mx-3">
+                                <img src="{{ cloudinary_url('running_shoe') }}" alt="avatar" class="w-full object-cover">
+                            </div>
+                            <div>
+                                <h1 class="text-gray-700 font-semibold ">Admin Support</h1>
+                                <span class="text-red-500 text-sm">Admin</span>
+                            </div>
+                           </div>
+                        </div>
+                    </header>
+                    {{ $slot }}
+                </main>
+            </div>
         </div>
     </div>
 </body>
