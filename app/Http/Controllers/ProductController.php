@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
+use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-
-    // public function __invoke()
-    // {
-    //     // ...
-    // }
     /**
      * Display a listing of the resource.
      */
@@ -25,34 +21,19 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('pages.products.create');
+        $categories = Category::orderBy('name')->get();
+
+        return view('pages.products.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'image' => 'required',
-            'description' => 'required',
-            'price' => 'required|numeric',
-        ]);
+        Product::create($request->data());
 
-        $user = auth()->user();
-        // $projects = new Product;
-        $product = $user->products->create([
-            'name' => $request->input('name'),
-            'image' => $request->input('image'),
-            'description' => $request->input('description'),
-            'price' => $request->input('price'),
-        ]);
-        // dd();
-       // Save the model instance to the database
-        $product->save();
-        // Redirect or perform any other actions after storing the data
-        return redirect('admin');
+        return back()->with('success', 'Product added Successfully!');
     }
 
     /**
@@ -68,38 +49,26 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $product = Product::findorfail($product->id);
-        // $this->authorize('update-product', $product);
+        $categories = Category::orderBy('name')->get();
 
-        return view('admin.edit-product',compact('product'));
+        return view('pages.products.edit', compact('product', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-        $product = Product::find($product->id); // Retrieve the specific product
+        $product->update($request->data());
 
-        $validatedData = $request->validate([
-            'name' => 'required|string',
-            'image' => 'required',
-            'description' => 'required|string',
-            'price' => 'required|numeric'
-        ]);
-
-        $product->update($validatedData); // Update the product
-        return redirect('admin');
-
+        return back()->with('success', 'Product Updated!');
     }
-
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Product $product)
     {
-        // dd($product);
         $product = Product::find($product->id);
         $product->delete();
 
