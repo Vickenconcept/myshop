@@ -1,9 +1,13 @@
+@import './_tailwind.css';
 
-/* @import './node_modules/bootstrap/scss/bootstrap.scss'; */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+/* Plugin */
+@import 'dropify/dist/css/dropify.min.css';
+
+
+/* Custom */
+@import './custom/_dropify.css';
+@import './custom/_toastify.css';
 
 
 

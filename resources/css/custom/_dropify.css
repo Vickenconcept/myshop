@@ -1,0 +1,16 @@
+.dropify-wrapper {
+    border-radius: 10px;
+    border: 1px dashed #979797;
+}
+
+.dropify-wrapper .dropify-message span.file-icon {
+    color: #979797;
+}
+
+.dropify-wrapper .dropify-message p{
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: #797979;
+}
+

@@ -1,37 +1,96 @@
-<x-admin-layout>
-    <div class="bg-white">
-        <h1 class="text-xl text-gray-700 bg-blue-200 py-2 px-10">Update product</h1>
-        <form action="{{ route('product.update', ['product' => $product->id]) }}" method="POST" enctype="multipart/form-data" class="max-w-md mx-auto">
-            @method('PUT')
-            @csrf
+<x-app-layout>
+    @section('breadcrumbs')
+    <li class="list">
+        <a href="{{ route('products.index') }}">Shop</a>
+    </li>
+    <li class="list active">Edit</li>
+    @endsection
 
-
-            <div class="mb-4" x-data="{ isFocused: false }">
-                <label for="name" class="block mb-2 font-normal text-gray-700 text-base transition-y duration-300 " x-bind:class="{ 'text-[12px]': isFocused || $refs.name.value }">Product Name</label>
-                <input type="text" id="name" name="name" class="w-full px-4 py-2  rounded-md focus:outline-none placeholder-sm" autocomplete="off" value="{{$product->name}}" placeholder="Product Name" required x-on:focus="isFocused = true" x-on:blur="isFocused = false" x-ref="name">
+    <x-notification />
+    <div class="py-12">
+        <div class="mx-auto px-3 md:px-6 lg:px-16">
+            <div class="lg:w-[90%] w-full mx-auto mb-3 flex items-center justify-between">
+                <h1 class="font-semibold text-2xl">Product Edit</h1>
             </div>
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border py-6 border-gray-200 h-auto lg:w-[90%] w-full mx-auto">
+                <form class="w-full lg:px-8 px-4 py-3 my-form" action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2">
+                        <div class="col-span-1 flex flex-col mt-1">
+                            <x-input-label for="name" :value="__('Item Name')" />
+                            <x-text-input id="name" class="mt-1 w-full bg-[#fff] text-xs" type="text" name="name" :value="old('name')" required autofocus />
+                        </div>
+                        <div class="col-span-1 flex flex-col mt-1">
+                            <x-input-label for="category" :value="__('Item Category')" />
+                            <x-my-select-input name="category_id" id="category" class="mt-1 text-xs">
+                                <option selected disabled></option>
+                                @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" @selected(old('category_id')==$category->id)>{{ $category->name }}</option>
+                                @endforeach
+                            </x-my-select-input>
+                        </div>
 
-            <div x-data="{ isFocused: false }" class="mb-4">
-                <label for="image" class="block mb-2 font-normal text-gray-700 text-base transition-y duration-300" x-bind:class="{ 'text-[12px]': isFocused || $refs.image.value }">Image address</label>
-                <input type="text" id="image" name="image" class="w-full px-4 py-2 rounded-md focus:outline-none placeholder-sm" autocomplete="off" value="{{$product->image}}" placeholder="Image Url" required x-on:focus="isFocused = true" x-on:blur="isFocused = false" x-ref="image">
+                        <div class="md:col-span-2 col-span-1 grid md:grid-cols-3 grid-cols-1 gap-x-6 gap-y-2">
+                            <div class="col-span-1 flex flex-col mt-1">
+                                <x-input-label for="price" :value="__('Item Price')" />
+                                <x-text-input type="text" id="price" class="mt-1 w-full bg-[#fff] text-xs" name="price" :value="old('price')" required />
+                                <x-input-error :messages="$errors->get('price')" class="mt-2" />
+                            </div>
+
+                            <div class="col-span-1 flex flex-col mt-1">
+                                <x-input-label for="discount" :value="__('Discount')" />
+                                <x-text-input type="text" id="discount" class="mt-1 w-full bg-[#fff] text-xs" name="discount" :value="old('discount')" />
+                                <x-input-error :messages="$errors->get('discount')" class="mt-2" />
+                            </div>
+
+                            <div class="col-span-1 flex flex-col mt-1">
+                                <x-input-label for="quantity" :value="__('Quantity')" />
+                                <x-text-input type="text" id="quantity" class="mt-1 w-full bg-[#fff] text-xs" name="quantity" :value="old('quantity')" />
+                                <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-2 col-span-1 grid md:grid-cols-3 grid-cols-1 gap-x-6 gap-y-2">
+                            <div class="flex flex-col mt-1">
+                                <x-input-label for="weight" :value="__('Item Weight')" />
+                                <x-text-input type="text" id="weight" class="mt-1 w-full bg-[#fff] text-xs" name="meta[weight]" :value="old('meta[weight]')" />
+                            </div>
+
+                            <div class="flex flex-col mt-1">
+                                <x-input-label for="size">
+                                    Item Size(s) <span class="italic">- separate multiple with comma ","</span>
+                                </x-input-label>
+                                <x-text-input type="text" id="size" class="mt-1 w-full bg-[#fff] text-xs" name="meta[size]" :value="old('meta[size]')" />
+                            </div>
+
+                            <div class="flex flex-col mt-1">
+                                <x-input-label for="color">
+                                    Item Color(s) <span class="italic">- separate multiple with comma ","</span>
+                                </x-input-label>
+                                <x-text-input type="text" id="color" class="mt-1 w-full bg-[#fff] text-xs" name="meta[color]" :value="old('meta[color]')" />
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:col-span-2 mt-1">
+                            <x-input-label for="markdown-editor" :value="__('Item Description')" />
+                            <x-my-textarea name="description" id="markdown-editor" rows="6" class="mt-1 w-full bg-[#fff] text-xs" placeholder="Enter a description for this product to give more details about it.">
+                                {!! old('description') !!}</x-my-textarea>
+                        </div>
+
+                        <div class="md:col-span-2 mt-1">
+                            <x-input-label for="markdown-editor" :value="__('Product Image')" class="mb-2" />
+                            <x-dropzone name="images[][src]" data-max-file-size="10M" multiple />
+                            <x-input-error :messages="$errors->get('images')" class="mt-2" />
+                        </div>
+
+                        <div class="md:col-span-2 col-span-1">
+                            <div class="float-right">
+                                <x-submit-button>Update</x-submit-button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <x-input-error :messages="$errors->get('image')" class="mt-2" />
-
-            <div class="mb-4" x-data="{ isFocused: false }">
-                <label for="description" class="block mb-2 font-normal text-gray-700 text-base transition-y duration-300" x-bind:class="{ 'text-[12px]': isFocused || $refs.description.value }">Description</label>
-                <textarea id="description" name="description" class="w-full h-12 px-4 py-2  rounded-md focus:outline-none placeholder-sm" autocomplete="off" value="{{$product->description}}" placeholder="Product Description " required x-on:focus="isFocused = true" x-on:blur="isFocused = false" x-ref="description"></textarea>
-            </div>
-            <x-input-error :messages="$errors->get('description')" class="mt-2" />
-
-            <div class="mb-4" x-data="{ isFocused: false }">
-                <label for="price" class="block mb-2 font-normal text-gray-700 text-base transition-y duration-300" x-bind:class="{ 'text-[12px]': isFocused || $refs.number.value }">Price</label>
-                <input type="text" id="price" name="price" class="w-full px-4 py-2  rounded-md focus:outline-none placeholder-sm" autocomplete="off" value="{{$product->price}}" placeholder="Amount" required x-on:focus="isFocused = true" x-on:blur="isFocused = false" x-ref="number">
-            </div>
-            <x-input-error :messages="$errors->get('price')" class="mt-2" />
-
-            <button type="submit" class="w-full px-4 py-2 text-white bg-blue-700 rounded-md hover:underline focus:outline-none focus:bg-blue-600">Create</button>
-            <!-- <button class="w-full px-4 py-2 text-gray-700  rounded-md hover:border-b  hover:border-x mb-2 focus:outline-none"><a href="{{ route('admin.index') }}">Back</a></button> -->
-
+        </div>
     </div>
-</x-admin-layout>
+</x-app-layout>

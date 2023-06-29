@@ -40,4 +40,8 @@ return [
      */
     'upload_preset' => env('CLOUDINARY_UPLOAD_PRESET'),
 
+    'folders' => [
+        'products'  => "mystore/products/shoes",
+    ]
+
 ];

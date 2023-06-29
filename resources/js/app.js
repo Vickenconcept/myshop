@@ -1,18 +1,27 @@
 import './bootstrap';
+import $ from 'jquery';
+
+window.$ = $;
 
 import Alpine from 'alpinejs';
-import dropdown from './dropdown.js';
-import animation from './components/animation.js';
-// import { gsap } from "gsap";
-
 
 window.Alpine = Alpine;
 
-// Alpine.start()
+import dropdown from './dropdown';
+import notification from './components/notification';
+
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
+
+window.Toastify = Toastify;
 
 
-    // Alpine.data('myData',myData);
-    Alpine.data('dropdown',dropdown);
-    Alpine.start();
-    
+Alpine.data('notification', notification);
+Alpine.data('dropdown', dropdown);
+Alpine.start();
+
+import 'dropify';
+
+$('.dropify').dropify();
+
 

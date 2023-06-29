@@ -2,22 +2,29 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'image',
-        'description',
-        'price',
+    protected $guarded = ['id'];
+
+    protected $casts = [
+        'meta' => 'array',
+        'images' => 'array',
     ];
 
-    public function user()
+    public function images(): Attribute
     {
-        return $this->belongsTo(User::class);
+        return Attribute::set(fn ($value) => json_encode($value));
+    }
+
+    public function categories() : BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }

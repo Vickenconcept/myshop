@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            // $table->foreign('id')->references('user_id')->on('users');
-            $table->foreignId('user_id')->constrained();
-            $table->string('name');
-            $table->string('image');
-            $table->text('description');
-            // $table->decimal('price');
-            $table->integer('price')->default(0)->nullable();
-
+            $table->text('name');
+            $table->foreignId('category_id');
+            $table->float('price');
+            $table->float('discount')->nullable();
+            $table->integer('quantity')->default(0);
+            $table->json('meta')->nullable();
+            $table->text('description')->nullable();
+            $table->json('images');
             $table->timestamps();
         });
     }
