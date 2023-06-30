@@ -8,16 +8,14 @@
             </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 bg-white rounded-md py-20 px-10">
-            <div>
-                <!-- <x-card :url="`{{ cloudinary_url('running_shoe') }}`" :productName="'Walking-tennis shoes'" :price="'$330.00 - $510.00'" /> -->
+                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
+                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
+                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
+                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
+                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
+                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
 
-            </div>
-
-            <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                <div>
-                    <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                </div>
-            </div>
+         
         </div>
     </div>
 
