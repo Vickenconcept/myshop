@@ -41,9 +41,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 bg-white rounded-md py-20 px-10">
             @foreach ($products as $product)
-            <!-- <a href="{{ route('products.edit', $product) }}"> -->
                 <x-card :product="$product" url="{{ route('products.edit', $product)}}"/>
-            <!-- </a> -->
             @endforeach
         </div>
     </div>

@@ -24,29 +24,11 @@
             </div>
             <!-- cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> <!-- card component -->
-                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                    <div>
-                        <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                    </div>
-                </div>
+                <!-- images will go in  here -->
+                @foreach ($products as $product)
+                <x-card :product="$product" url="{{ route('products.edit', $product)}}" />
+                @endforeach
 
-                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                    <div>
-                        <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                    </div>
-                </div>
-
-                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                    <div>
-                        <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                    </div>
-                </div>
-
-                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                    <div>
-                        <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                    </div>
-                </div>
             </div>
         </section>
         <!-- new collection of shoes -->
@@ -109,29 +91,11 @@
                 <div class=" mx-5 lx:mx-20">
                     <h1 class="text-5xl px-10 font-normal text-center">Best deals on running shoes</h1>
                     <div class="grid  grid-cols-2 gap-5 mt-10">
-                        <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                            <div>
-                                <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                            </div>
-                        </div>
+                        <!-- images will go in  here -->
+                        @foreach ($products as $product)
+                        <x-card :product="$product" url="{{ route('products.edit', $product)}}" />
+                        @endforeach
 
-                        <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                            <div>
-                                <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                            </div>
-                        </div>
-
-                        <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                            <div>
-                                <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                            </div>
-                        </div>
-
-                        <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                            <div>
-                                <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                            </div>
-                        </div>
                     </div>
                     <!-- add more -->
                 </div>
@@ -162,29 +126,11 @@
             </div>
             <!-- cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> <!-- card component -->
-                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                    <div>
-                        <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                    </div>
-                </div>
+                <!-- images will go in  here -->
+                @foreach ($products as $product)
+                <x-card :product="$product" url="{{ route('products.edit', $product)}}" />
+                @endforeach
 
-                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                    <div>
-                        <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                    </div>
-                </div>
-
-                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                    <div>
-                        <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                    </div>
-                </div>
-
-                <div x-data="{imageSrc: '{{ cloudinary_url('running_shoe') }}', productName: 'Walking-tennis shoes' , price:'$330.00 - $510.00'}">
-                    <div>
-                        <x-card x-data="{imageSrc, productName, price}" x-data="{productName: productName, price: price}"></x-card>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
