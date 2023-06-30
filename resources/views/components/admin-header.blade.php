@@ -1,4 +1,4 @@
-<header class="w-full flex flex-row justify-between px-20 bg-gray-200 font-sans py-2">
+<header class="w-full flex flex-col-reverse sm:flex-row justify-between px-20 bg-gray-200 font-sans py-2">
     <div class="py-3">
         <a href="{{ route('dashboard') }}" class="text-left py-2 font-semibold text-gray-700">Admin Dashboard</a>
         <a href="{{ route('products.index') }}" class="text-red-400 {{ request()->routeIs('products.index') ? '' : 'hidden' }}"><span class="text-md font-thin text-gray-500"> / </span>shop</a>
@@ -9,7 +9,7 @@
         <div class="flex flex-row">
 
             <div>
-                <div id="dropdownHoverDiv" data-dropdown-toggle="adminSupport" data-dropdown-trigger="hover" class="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-1 text-center inline-flex items-center cursor-pointer">
+                <div id="dropdownHoverDiv" data-dropdown-toggle="adminSupport" data-dropdown-trigger="hover" class="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-0 sm:px-4 py-1 text-center inline-flex items-center cursor-pointer">
                     <div class="w-10 h-10 bg-blue-900 rounded-full  border  border-gray-300  overflow-hidden mx-3">
                         <img src="{{ cloudinary_url('running_shoe') }}" alt="avatar" class="w-full object-cover">
                     </div>

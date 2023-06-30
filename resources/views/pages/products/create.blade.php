@@ -1,10 +1,10 @@
 <x-app-layout>
-    @section('breadcrumbs')
+    <!-- @section('breadcrumbs')
     <li class="list">
         <a href="{{ route('products.index') }}">Shop</a>
     </li>
     <li class="list active">Create</li>
-    @endsection
+    @endsection -->
 
     <x-notification />
     <div class="py-12">
