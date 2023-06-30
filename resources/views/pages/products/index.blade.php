@@ -8,14 +8,11 @@
             </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 bg-white rounded-md py-20 px-10">
-                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
-                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
-                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
-                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
-                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
-                <x-card  :productname=" 'Walking-tennis '" :price=" ' 20003' " url=" {{ cloudinary_url('running_shoe') }} "></x-card>
-
-         
+            @foreach ($products as $product)
+            <a href="{{ route('products.edit', $product) }}">
+                <x-card :product="$product" />
+            </a>
+            @endforeach
         </div>
     </div>
 

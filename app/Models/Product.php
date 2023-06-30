@@ -14,7 +14,7 @@ class Product extends Model
     protected $guarded = ['id'];
 
     protected $casts = [
-        'meta' => 'array',
+        'meta' => 'object',
         'images' => 'array',
     ];
 
@@ -23,7 +23,7 @@ class Product extends Model
         return Attribute::set(fn ($value) => json_encode($value));
     }
 
-    public function categories() : BelongsTo
+    public function category() : BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
