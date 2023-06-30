@@ -13,7 +13,7 @@
                 <h1 class="font-semibold text-2xl">New Product</h1>
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border py-6 border-gray-200 h-auto lg:w-[90%] w-full mx-auto">
-                <form class="w-full lg:px-8 px-4 py-3 my-form" action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+                <form class="w-full lg:px-8 px-4 py-3 my-form" action="" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2">
                         <div class="col-span-1 flex flex-col mt-1">
