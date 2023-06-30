@@ -2,6 +2,7 @@
 
     <div class="px-20 py-10">
         <section class="bg-blue-700 px-10 py-16 rounded-md font-sans">
+            <div class="text-end"><span class="text-white text-sm py-2 px-4 bg-blue-800 rounded-md">21,June,2023</span></div>
             <h1 class="text-white text-md font-semibold ">Good Evening Admin</h1>
             <span class="text-white text-sm font-semibold">Admin</span>
         </section>
@@ -44,7 +45,13 @@
 
         <section class="grid grid-cols-1  lg:grid-cols-4 gap-y-8 lg:gap-x-8 my-10 font-sans">
             <div class="col-span-3 bg-white  rounded-md">
+                <div class="flex flex-row justify-between">
                 <h2 class="text-gray-700 font-semibold p-10">Incomplete Order</h2>
+                <a href="#" class="text-red-400 text-xs p-10">
+                <i class="bx bx-signal-5 text-left my-auto text-yellow-400"></i>
+                    View All Order
+                </a>
+                </div>
                 <table class="w-full table table-fixed">
                     <thead>
                         <tr class="text-left border-b-2 shadow-md ">
