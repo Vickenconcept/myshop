@@ -26,7 +26,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> <!-- card component -->
                 <!-- images will go in  here -->
                 @foreach ($products as $product)
-                <x-card :product="$product" url="{{ route('products.edit', $product)}}" />
+                <x-card :product="$product" url="{{ route('products.show', $product)}}" />
                 @endforeach
 
             </div>
