@@ -2,7 +2,7 @@
 
     <div class="px-20 py-10">
         <section class="bg-blue-700 px-10 py-16 rounded-md font-sans">
-            <div class="text-end"><span class="text-white text-sm py-2 px-4 bg-blue-800 rounded-md">21,June,2023</span></div>
+            <div class="text-end"><span class="text-white text-sm py-2 px-4 bg-blue-800 rounded-md">{{  today()->toFormattedDayDateString() }}</span></div>
             <h1 class="text-white text-md font-semibold ">Good Evening Admin</h1>
             <span class="text-white text-sm font-semibold">Admin</span>
         </section>
@@ -64,7 +64,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="border-b-2 shadow-md">
                             <td class="text-gray-700 font-normal text-sm p-10 text-center" colspan="6">No pending orer available...</td>
                         </tr>
                     </tbody>

@@ -6,42 +6,42 @@
         <div class="overflow-hidden ">
             <ul>
                 <li class="my-4">
-                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('dashboard') ? 'active  bg-red-500' : '' }}">
+                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 hover:bg-gray-700/25 transition duration-300 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('dashboard') ? 'active  bg-gray-700/25' : '' }}">
                         Dashboard
                     </x-nav-link>
                 </li>
                 <li class="my-4">
-                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('events') ? 'active  bg-red-500' : '' }}">
+                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 hover:bg-gray-700/25 transition duration-300 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('events') ? 'active  bg-gray-700/25' : '' }}">
                         Events
                     </x-nav-link>
                 </li>
                 <li class="my-4">
-                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('photo-gallery') ? 'active  bg-red-500' : '' }}">
+                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 hover:bg-gray-700/25 transition duration-300 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('photo-gallery') ? 'active  bg-gray-700/25' : '' }}">
                         Photo Gallery
                     </x-nav-link>
                 </li>
                 <li class="my-4">
-                    <x-nav-link :href="route('products.index')" class="text-white cursor-pointer text-xl p-3 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('products.index') ? 'active  bg-red-500' : '' }}">
+                    <x-nav-link :href="route('products.index')" class="text-white cursor-pointer text-xl p-3 hover:bg-gray-700/25 transition duration-300 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('products.index') ? 'active  bg-gray-700/25' : '' }}">
                         Shop
                     </x-nav-link>
                 </li>
                 <li class="my-4">
-                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('blog-post') ? 'active  bg-red-500' : '' }}">
+                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 hover:bg-gray-700/25 transition duration-300 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('blog-post') ? 'active  bg-gray-700/25' : '' }}">
                         Blog POst
                     </x-nav-link>
                 </li>
                 <li class="my-4">
-                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('team') ? 'active  bg-red-500' : '' }}">
+                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 hover:bg-gray-700/25 transition duration-300 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('team') ? 'active  bg-gray-700/25' : '' }}">
                         Team
                     </x-nav-link>
                 </li>
                 <li class="my-4">
-                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('learning') ? 'active  bg-red-500' : '' }}">
+                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 hover:bg-gray-700/25 transition duration-300 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('learning') ? 'active  bg-gray-700/25' : '' }}">
                         Learning
                     </x-nav-link>
                 </li>
                 <li class="my-4">
-                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('products') ? 'active  bg-red-500' : '' }}">
+                    <x-nav-link :href="route('dashboard')" class="text-white cursor-pointer text-xl p-3 hover:bg-gray-700/25 transition duration-300 rounded hover:text-white hover:border-none border-none w-full {{ request()->routeIs('products') ? 'active  bg-gray-700/25' : '' }}">
                         Products
                     </x-nav-link>
                 </li>
