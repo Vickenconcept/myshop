@@ -1,5 +1,5 @@
 <!-- navbar -->
-<nav class="flex flex-col md:flex-row  md:justify-between  bg-white  px-1 fixed top-0 w-full z-20">
+<nav class="flex flex-col md:flex-row  md:justify-between  bg-white  px-1 fixed top-0 w-full z-20 shadow">
     <div class=" font-semibold text-xl py-[0.8rem] box transition-x duration-300">
         <a href=""><span class="logo-default test-retina-three " id="box"><img alt="logo" src="https://emart.wpthemedemos.com/shoes/wp-content/uploads/sites/18/2023/01/emart-011.webp" srcset="https://emart.wpthemedemos.com/shoes/wp-content/uploads/sites/18/2023/01/emart-011.webp 1x, https://emart.wpthemedemos.com/shoes/wp-content/uploads/sites/18/2023/01/emart-011.webp 2x" width="147" height="31"></span></a>
     </div>

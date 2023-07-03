@@ -21,6 +21,7 @@ return new class extends Migration
             $table->json('meta')->nullable();
             $table->text('description')->nullable();
             $table->json('images');
+            $table->enum('published');
             $table->timestamps();
         });
     }

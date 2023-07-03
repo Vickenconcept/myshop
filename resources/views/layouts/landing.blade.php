@@ -37,7 +37,6 @@
         </header>
         @endif
         <!-- navbar -->
-        <x-navbar />
             <!-- Page Content -->
             <main>
                 {{ $slot }}
