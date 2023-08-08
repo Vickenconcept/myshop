@@ -26,8 +26,6 @@
 
 <body class="font-oswald antialiased">
     <div class="min-h-screen bg-gray-100  overflow-x-hidden">
-
-
         <!-- Page Heading -->
         @if (isset($header))
         <header class="bg-white shadow">
@@ -36,19 +34,20 @@
             </div>
         </header>
         @endif
+
         <!-- navbar -->
         <x-navbar />
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+
+        <!-- Page Content -->
+        <main class="mt-16">
+            {{ $slot }}
+        </main>
     </div>
+
     <!-- footer -->
-    <x-footer></x-footer>
+    <x-footer />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
 </body>
 
 </html>

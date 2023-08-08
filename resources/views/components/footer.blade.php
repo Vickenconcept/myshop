@@ -1,11 +1,13 @@
-<footer class="bg-gray-100 mt-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
-        <div class=" p-4  ">
+<footer class="bg-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20 py-24 px-32">
+        <div class="">
             <h1 class=" text-black font-normal text-2xl mb-8 ">Newsletter</h1>
             <p class="text-gray- pr-10 mb-5">Get free 20% discount for all products on your first order</p>
-            <div class=" xl:bg-white bg-transparent xl:w-[92.5%]">
-                <input type="text" class="w-[17rem] border-transparent p-3 text-gray-500" placeholder="Your email">
-                <input type="submit" value="->" class="px-7 py-3 bg-red-300 text-white font-extrabold cursor-pointer">
+            <div class="">
+                <form action="" class="flex">
+                    <input type="text" class="w-[17rem] border-transparent p-3 text-gray-500 focus:ring-0 focus:border-0" placeholder="Your email">
+                    <input type="submit" value="->" class="px-7 py-3 bg-red-300 text-white font-extrabold cursor-pointer">
+                </form>
             </div>
 
         </div>
@@ -21,14 +23,16 @@
                 <i class='bx bxl-twitter  text-slate-100 bg-gray-900 rounded-full p-3 relative bottom-3 mx-2'></i>
                 <i class='bx bxl-instagram  text-slate-100 bg-gray-900 rounded-full p-3 relative bottom-3 mx-2'></i>
             </div>
-            <div class="text-gray-400">
+            <div class="text-gray-400 flex items-center">
                 <i class='bx bxl-visa text-6xl font-normal mr-2'></i>
-                <i class=' text-sm font-normal ml-2 '>
-                    <span class="text-gray-50" style="text-stroke:2px #ccc; -webkit-text-stroke: 2px #ccc;">
-                        AMERICAN
-                        <span class="relative -bottom-4 right-10">EXPRESS</span>
-                    </span>
-                </i>
+                <div>
+                    <i class=' text-sm font-normal ml-2 '>
+                        <span class="text-gray-50" style="text-stroke:2px #ccc; -webkit-text-stroke: 2px #ccc;">
+                            AMERICAN
+                            <span class="relative -bottom-4 right-10">EXPRESS</span>
+                        </span>
+                    </i>
+                </div>
                 <i class='bx bxl-mastercard text-6xl font-normal '></i>
             </div>
         </div>

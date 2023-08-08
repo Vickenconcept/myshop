@@ -12,4 +12,9 @@ class LandingController extends Controller
         $products = Product::latest()->get();
         return view('pages.landing.home', compact('products'));
     }
+
+    public function contact()
+    {
+        return view('pages.landing.contact');
+    }
 }

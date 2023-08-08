@@ -1,7 +1,7 @@
-<div class=" pb-4 shadow rounded-md hover:shadow-md overflow-hidden bg-white">
+<div class="pb-4 shadow hover:shadow-md overflow-hidden bg-slate-100">
     <a href="{{ $url }}">
-        <div class=" h-[32dvh] w-full">
-            <img src="{{ $product->images[0]['src'] }}" alt="Sample Image" class=" object-cover w-[100%] h-full">
+        <div class="w-full">
+            <img src="{{ $product->images[0]['src'] }}" alt="Sample Image" class="object-cover w-[100%] h-full">
         </div>
     </a>
     <div class="px-3">
